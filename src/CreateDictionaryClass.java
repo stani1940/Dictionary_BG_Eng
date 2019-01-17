@@ -101,6 +101,7 @@ public class CreateDictionaryClass extends JFrame {
                 String text = textField.getText().trim();
 
 
+
                 try {
 
                     HashMap<String, String> map = generateDict();
@@ -108,6 +109,8 @@ public class CreateDictionaryClass extends JFrame {
 
                     if ((text != null) && (!text.isEmpty())) {
                         char text1 = text.charAt(0);
+                        addLanguageoption(isCyrillic(text1));
+                        panel.repaint();
 
 
 
@@ -132,7 +135,6 @@ public class CreateDictionaryClass extends JFrame {
                 textArea.append(text);
                 textField.selectAll();
                 textArea.setCaretPosition(textArea.getDocument().getLength());
-
             }
         });
     }
