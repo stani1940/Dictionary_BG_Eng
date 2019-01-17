@@ -100,6 +100,7 @@ public class CreateDictionaryClass extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String text = textField.getText().trim();
 
+
                 try {
 
                     HashMap<String, String> map = generateDict();
@@ -107,6 +108,7 @@ public class CreateDictionaryClass extends JFrame {
 
                     if ((text != null) && (!text.isEmpty())) {
                         char text1 = text.charAt(0);
+                        
 
 
                         for (String s : text.split(" ")) {
