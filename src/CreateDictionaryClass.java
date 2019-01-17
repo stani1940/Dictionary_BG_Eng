@@ -87,7 +87,7 @@ public class CreateDictionaryClass extends JFrame {
         panel.add(textArea);
 
         frame.getContentPane().add(panel);
-        frame.setSize(650, 650);
+        frame.setSize(650, 600);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
@@ -100,8 +100,6 @@ public class CreateDictionaryClass extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String text = textField.getText().trim();
 
-
-
                 try {
 
                     HashMap<String, String> map = generateDict();
@@ -111,8 +109,6 @@ public class CreateDictionaryClass extends JFrame {
                         char text1 = text.charAt(0);
                         addLanguageoption(isCyrillic(text1));
                         panel.repaint();
-
-
 
                         for (String s : text.split(" ")) {
                             for (Map.Entry<String, String> me : set) {
@@ -180,7 +176,6 @@ public class CreateDictionaryClass extends JFrame {
 
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-
                 new CreateDictionaryClass();
             }
         });
