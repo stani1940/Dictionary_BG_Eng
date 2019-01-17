@@ -108,7 +108,7 @@ public class CreateDictionaryClass extends JFrame {
 
                     if ((text != null) && (!text.isEmpty())) {
                         char text1 = text.charAt(0);
-                        
+
 
 
                         for (String s : text.split(" ")) {
@@ -136,6 +136,20 @@ public class CreateDictionaryClass extends JFrame {
             }
         });
     }
+    public void addLanguageoption(boolean languageOption) {
+        if (languageOption) {
+            panel.add(labelBg);
+            panel.add(labelLeftarrow);
+            panel.add(labelEng);
+        } else {
+            panel.add(labelEng);
+            panel.add(labelRightarrow);
+            panel.add(labelBg);
+        }
+
+        frame.setVisible(true);
+    }
+
     static boolean isCyrillic(char text1) {
 
         return Character.UnicodeBlock.CYRILLIC.equals(Character.UnicodeBlock.of(text1));
