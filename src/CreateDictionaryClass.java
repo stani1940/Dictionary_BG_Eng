@@ -134,6 +134,10 @@ public class CreateDictionaryClass extends JFrame {
             }
         });
     }
+    static boolean isCyrillic(char text1) {
+
+        return Character.UnicodeBlock.CYRILLIC.equals(Character.UnicodeBlock.of(text1));
+    }
     static HashMap<String, String> generateDict() throws Exception {
         File file = new File("src/test.txt");
 
