@@ -29,6 +29,7 @@ public class CreateDictionaryClass extends JFrame {
     Icon icon4;
     public CreateDictionaryClass(){
         drawAndshowGui();
+        translator();
 
     }
 
@@ -91,6 +92,67 @@ public class CreateDictionaryClass extends JFrame {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
+    public void translator() {
+
+        translateButton.addActionListener(new ActionListener() {
+            @Override
+
+            public void actionPerformed(ActionEvent e) {
+                String text = textField.getText().trim();
+
+                try {
+
+                    HashMap<String, String> map = generateDict();
+                    Set<Map.Entry<String, String>> set = map.entrySet();
+
+                    if ((text != null) && (!text.isEmpty())) {
+                        char text1 = text.charAt(0);
+
+
+                        for (String s : text.split(" ")) {
+                            for (Map.Entry<String, String> me : set) {
+
+                                if (s.equalsIgnoreCase(me.getKey())) {
+                                    text = me.getValue() + " ";
+                                } else if (s.equalsIgnoreCase(me.getValue())) {
+                                    text = me.getKey() + " ";
+                                }
+                            }
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(frame, "" + "Моля въведете дума");
+                    }
+
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+
+                textArea.append(text);
+                textField.selectAll();
+                textArea.setCaretPosition(textArea.getDocument().getLength());
+
+            }
+        });
+    }
+    static HashMap<String, String> generateDict() throws Exception {
+        File file = new File("src/test.txt");
+
+        HashMap<String, String> map = new HashMap<String, String>();
+
+        String line;
+        BufferedReader reader = new BufferedReader(new FileReader(file));
+        while ((line = reader.readLine()) != null) {
+            String[] parts = line.split(" ", 2);
+            if (parts.length >= 2) {
+                String key = parts[0];
+                String value = parts[1];
+                map.put(key, value);
+            }
+            //reader.close();
+        }
+        return map;
+    }
+
 
     public static void main(String[] args) {
 

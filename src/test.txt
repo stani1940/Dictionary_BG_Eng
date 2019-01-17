@@ -1,0 +1,154 @@
+atmosphere Атмосфера
+basket Кошница
+amazement Изумление
+bicycle Велосипед
+bounce Подксачане
+april Април
+axe Брадва
+cheese Сирене
+consist Състои
+agony Агония
+abruptly Рязко
+bend Завой
+bump Подутина
+struggling Борещ се
+bay залив
+brand Марка
+clamp Скоба
+addition Допълнение
+crown Корона
+banger Пушка
+choke Давя
+audience Публика
+hidе Крия
+collar Яка
+apt Подходящ
+cookie Бисквитка
+considering Като се има предвид
+beaten Бит
+creak Скърцане
+active Активен
+amaze Смайвам
+birth Раждане
+come Идвам
+standpipe	Ветикална тръба
+baker Пекар
+analysis Анализ
+crossing Пресичане
+announce Обявя
+venture Осмелявам се
+airport Летище
+blowing Продухване
+coast Крайбрежие
+occasionally	От време на време
+daylight	Дневна светлина
+charming Очарователен
+eastward	На изток
+acquainted Запознат
+butt Мишена
+corpse Труп
+acting Актьорско майсторство
+largely	До голяма степен
+compare Сравнение
+access Достъп
+sunlight	Слънчева светлина
+artist Художник
+cliff Стръмна скала
+confident Уверен
+admire Признавам
+crew Екипаж
+confess Признавам
+civil Граждански
+near Близо до
+hay Сено
+civilian Цивилен
+camera Камера
+belief Вярване
+bundle Пакет
+hand ръка
+barrel Барел
+chip Чип
+consequence Последица
+blouse Блуза
+arouse Събуждам
+coffin Ковчег
+blown Издухан
+clearing Разчистване
+actor Актьор
+environment	Околна среда
+admiration Възхищение
+bacon Бекон
+absolute Абсолютен
+clap Плясък
+moonlight	Лунна светлина
+ash пепел
+curiously любопитство
+behaviour Поведение
+arch Арка
+bunk Легло
+peer	Взирам се
+argument Довод
+constant Постоянен
+broadway Бродуей
+correct Правилен
+arrow Стрелка
+cotton Памук
+cow Крава
+constantly Постоянно
+biting Лют
+cough Кашлица
+associate Сътрудник
+bruise Натъртване
+lest	Да не би да
+red червен
+biggest Най-големият
+bark Кора
+clue Улика
+﻿abandoned Изоставен
+bear мечка
+bureau Офис
+climbing Изкачване
+catching Ловене
+citizen Гражданин
+beard Брада
+bench Пейка
+archive Архив
+cheerful Радостен
+breeze Бриз
+chosen Избран
+alas Уви
+anxiety Безпокойство
+chuckle Кудкудякане
+accompany Придружи
+ache Болка
+bob Боб
+love обичам
+background Фон
+crow Врана
+aloud На глас
+crawling Лазейки
+arose Възникнало
+collect Събирам
+cloth Кърпа
+gear скорост
+brightly Бляскаво
+awaken Събуждам
+capable Способен
+burden Тежест
+crouch Свиване
+alert Тревога
+billion Милиард
+bath Баня
+album Албум
+assistant Асистент
+frown Намръщвам се
+argue Споря
+awe Страхопочитание
+cheer Ура
+crap Глупости
+acknowledge Признавам
+build Строя
+bony Костелив
+betray Издавам
+cancer Рак
+astonish Учудвам
