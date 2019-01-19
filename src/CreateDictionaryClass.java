@@ -2,9 +2,12 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.io.*;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.PrintWriter;
+
 import java.io.FileReader;
 import java.io.Writer;
 import java.util.*;
@@ -101,14 +104,14 @@ public class CreateDictionaryClass extends JFrame {
 
             public void actionPerformed(ActionEvent e) {
                 String text = textField.getText().trim();
-
+                char text1 = text.charAt(0);
                 try {
 
                     HashMap<String, String> map = generateDict();
                     Set<Map.Entry<String, String>> set = map.entrySet();
 
                     if ((text != null) && (!text.isEmpty())) {
-                        char text1 = text.charAt(0);
+
                         addLanguageoption(isCyrillic(text1));
                         panel.repaint();
 
@@ -173,10 +176,32 @@ public class CreateDictionaryClass extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String text = textField.getText().trim();
                 String text2 = textArea.getText().trim();
+                char text1 = text.charAt(0);
 
                 map.put(text, text2);
                 //System.out.println(Arrays.asList(map));
+                saveTofile(text1);
             }
+            public void saveTofile(char text1){
+                File sFile = new File("src/test.txt");
+
+                try {
+                    PrintWriter pw = new PrintWriter(sFile);
+                    for (Map.Entry<String, String> map : set) {
+                        if (!isCyrillic(text1)) {
+                            pw.println(map.getKey() + " " + map.getValue());
+                        }else{
+                            pw.println(map.getValue() + " " + map.getKey());
+                        }
+                    }
+                    pw.flush();
+                    pw.close();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
         });
     }
     static HashMap<String, String> generateDict() throws Exception {
