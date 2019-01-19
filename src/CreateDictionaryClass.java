@@ -112,6 +112,15 @@ public class CreateDictionaryClass extends JFrame {
                         addLanguageoption(isCyrillic(text1));
                         panel.repaint();
 
+                        if (!isCyrillic(text1) && !map.containsKey(text)) {
+                            JOptionPane.showMessageDialog(frame, "" + "The word is missing Please click button add");
+                            addWords(map);
+                        }
+                        if (isCyrillic(text1) && !map.containsValue(text)) {
+                            JOptionPane.showMessageDialog(frame, "" + "Думата липсва в речника Моля натиснете бутона Въведи");
+                            addWords(map);
+                        }
+
                         for (String s : text.split(" ")) {
                             for (Map.Entry<String, String> me : set) {
 
