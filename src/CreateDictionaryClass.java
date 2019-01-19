@@ -27,7 +27,8 @@ public class CreateDictionaryClass extends JFrame {
     Icon icon2;
     Icon icon3;
     Icon icon4;
-    public CreateDictionaryClass(){
+
+    public CreateDictionaryClass() {
         drawAndshowGui();
         translator();
 
@@ -92,6 +93,7 @@ public class CreateDictionaryClass extends JFrame {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
+
     public void translator() {
 
         translateButton.addActionListener(new ActionListener() {
@@ -134,6 +136,7 @@ public class CreateDictionaryClass extends JFrame {
             }
         });
     }
+
     public void addLanguageoption(boolean languageOption) {
         if (languageOption) {
             panel.add(labelBg);
@@ -152,6 +155,7 @@ public class CreateDictionaryClass extends JFrame {
 
         return Character.UnicodeBlock.CYRILLIC.equals(Character.UnicodeBlock.of(text1));
     }
+
     static HashMap<String, String> generateDict() throws Exception {
         File file = new File("src/test.txt");
 
