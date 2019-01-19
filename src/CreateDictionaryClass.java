@@ -156,6 +156,20 @@ public class CreateDictionaryClass extends JFrame {
         return Character.UnicodeBlock.CYRILLIC.equals(Character.UnicodeBlock.of(text1));
     }
 
+    public void addWords(HashMap<String, String> map) {
+        Set<Map.Entry<String, String>> set = map.entrySet();
+        addButton.addActionListener(new ActionListener() {
+            @Override
+
+            public void actionPerformed(ActionEvent e) {
+                String text = textField.getText().trim();
+                String text2 = textArea.getText().trim();
+
+                map.put(text, text2);
+                //System.out.println(Arrays.asList(map));
+            }
+        });
+    }
     static HashMap<String, String> generateDict() throws Exception {
         File file = new File("src/test.txt");
 
