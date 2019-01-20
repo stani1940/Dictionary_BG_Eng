@@ -4,12 +4,12 @@ import javax.swing.*;
 import java.io.*;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
+
 import java.io.File;
 import java.io.PrintWriter;
 
 import java.io.FileReader;
-import java.io.Writer;
+
 import java.util.*;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -97,21 +97,21 @@ public class CreateDictionaryClass extends JFrame {
         frame.setVisible(true);
     }
 
-    public void translator() {
+    public void translator()  {
 
         translateButton.addActionListener(new ActionListener() {
             @Override
 
             public void actionPerformed(ActionEvent e) {
                 String text = textField.getText().trim();
-                char text1 = text.charAt(0);
+
                 try {
 
                     HashMap<String, String> map = generateDict();
                     Set<Map.Entry<String, String>> set = map.entrySet();
 
                     if ((text != null) && (!text.isEmpty())) {
-
+                        char text1 = text.charAt(0);
                         addLanguageoption(isCyrillic(text1));
                         panel.repaint();
 
@@ -186,16 +186,16 @@ public class CreateDictionaryClass extends JFrame {
                 File sFile = new File("src/test.txt");
 
                 try {
-                    PrintWriter pw = new PrintWriter(sFile);
+                    PrintWriter printWriter = new PrintWriter(sFile);
                     for (Map.Entry<String, String> map : set) {
                         if (!isCyrillic(text1)) {
-                            pw.println(map.getKey() + " " + map.getValue());
+                            printWriter.println(map.getKey() + " " + map.getValue());
                         }else{
-                            pw.println(map.getValue() + " " + map.getKey());
+                            printWriter.println(map.getValue() + " " + map.getKey());
                         }
                     }
-                    pw.flush();
-                    pw.close();
+                    printWriter.flush();
+                    printWriter.close();
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }

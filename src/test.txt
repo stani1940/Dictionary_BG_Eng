@@ -1,157 +1,153 @@
-Атмосфера atmosphere
-Кошница basket
-Изумление amazement
-Велосипед bicycle
-Подксачане bounce
-Април april
-Брадва axe
-Сирене cheese
-Състои consist
-Агония agony
-Рязко abruptly
-Завой bend
-Подутина bump
-Борещ се struggling
-залив bay
-Близо до near
-Марка brand
-Скоба clamp
-Допълнение addition
-Корона crown
-Пушка banger
-Давя choke
-Публика audience
-Крия hidе
-Яка collar
-Подходящ apt
-Бисквитка cookie
-Като се има предвид considering
-Бит beaten
-Скърцане creak
-Активен active
-Смайвам amaze
-Раждане birth
-Идвам come
-тръба standpipe	Ветикална
-Пекар baker
-Анализ analysis
-Пресичане crossing
-Обявя announce
-Осмелявам се venture
-Летище airport
-Продухване blowing
-Крайбрежие coast
-време на време occasionally	От
-светлина daylight	Дневна
-Очарователен charming
-изток eastward	На
-Запознат acquainted
-Мишена butt
-Труп corpse
-Актьорско майсторство acting
-голяма степен largely	До
-обичам love
-Сравнение compare
-Достъп access
-светлина sunlight	Слънчева
-Художник artist
-Стръмна скала cliff
-Уверен confident
-Признавам admire
-Екипаж crew
-Признавам confess
-Граждански civil
-Цивилен civilian
-Камера camera
-Вярване belief
-Пакет bundle
-ръка hand
-Барел barrel
-Чип chip
-Последица consequence
-Блуза blouse
-Събуждам arouse
-Ковчег coffin
-Издухан blown
-убивам kill
-Разчистване clearing
-Актьор actor
-среда environment	Околна
-Възхищение admiration
-Бекон bacon
-Абсолютен absolute
-Плясък clap
-светлина moonlight	Лунна
-пепел ash
-любопитство curiously
-Поведение behaviour
-Арка arch
-Легло bunk
-се peer	Взирам
-hat шапка
-Довод argument
-Постоянен constant
-Бродуей broadway
-Правилен correct
-Стрелка arrow
-Памук cotton
-Крава cow
-Постоянно constantly
 Лют biting
-Кашлица cough
-Сътрудник associate
-Натъртване bruise
-не би да lest	Да
-червен red
-Най-големият biggest
-Кора bark
-Улика clue
-Изоставен ﻿abandoned
 мечка bear
-Офис bureau
-Изкачване climbing
-Сено hay
-Ловене catching
-Гражданин citizen
-Брада beard
-Пейка bench
-дърво tree
-Архив archive
-Радостен cheerful
-Бриз breeze
-Избран chosen
-Уви alas
-Безпокойство anxiety
-Кудкудякане chuckle
-Придружи accompany
-Болка ache
-Боб bob
-Фон background
-Врана crow
-На глас aloud
-Лазейки crawling
-Възникнало arose
-Събирам collect
-Кърпа cloth
-скорост gear
-Бляскаво brightly
-Събуждам awaken
-Способен capable
-Тежест burden
-Свиване crouch
-Тревога alert
-Милиард billion
-Баня bath
+Барел barrel
+среда environment	Околна
 Албум album
+Памук cotton
+Рязко abruptly
+Довод argument
+Подходящ apt
+Болка ache
+Крия hidе
+Публика audience
+Давя choke
+Актьорско майсторство acting
+Вярване belief
+тръба standpipe	Ветикална
+се peer	Взирам
+Пекар baker
 Асистент assistant
-Намръщвам се frown
-Споря argue
-Страхопочитание awe
-Ура cheer
-Глупости crap
-Признавам acknowledge
 Строя build
-Костелив bony
-Издавам betray
-Рак cancer
+Сирене cheese
+Натъртване bruise
+търся dir
+Сено hay
+Очарователен charming
+Ловене catching
+Скърцане creak
+Милиард billion
+Скоба clamp
+Дневна светлина daylight
 Учудвам astonish
+Гражданин citizen
+Кошница basket
+Събуждам awaken
+червен red
+Рак cancer
+Разчистване clearing
+ръка hand
+пепел ash
+forest гора
+Мишена butt
+Ура cheer
+Състои consist
+Бисквитка cookie
+Свиване crouch
+Завой bend
+Екипаж crew
+Брадва axe
+Пресичане crossing
+Бродуей broadway
+Събирам collect
+Осмелявам се venture
+Тежест burden
+Бляскаво brightly
+Намръщвам се frown
+Стръмна скала cliff
+Агония agony
+Подксачане bounce
+Сътрудник associate
+Бриз breeze
+любопитство curiously
+Изумление amazement
+Кърпа cloth
+Изкачване climbing
+Раждане birth
+Пейка bench
+Допълнение addition
+Чип chip
+Офис bureau
+Стрелка arrow
+Кудкудякане chuckle
+Марка brand
+Летище airport
+Крава cow
+Актьор actor
+Април april
+Достъп access
+Идвам come
+Боб bob
+Сравнение compare
+Арка arch
+Плясък clap
+Кашлица cough
+Анализ analysis
+Страхопочитание awe
+Велосипед bicycle
+Ковчег coffin
+Блуза blouse
+не би да lest	Да
+Лазейки crawling
+Тревога alert
+Издухан blown
+Художник artist
+залив bay
+Изоставен ﻿abandoned
+Продухване blowing
+Постоянен constant
+Костелив bony
+Цивилен civilian
+Избран chosen
+Улика clue
+Брада beard
+На глас aloud
+обичам love
+Яка collar
+Уверен confident
+Крайбрежие coast
+Признавам acknowledge
+Поведение behaviour
+Кора bark
+Уви alas
+Запознат acquainted
+Постоянно constantly
+Камера camera
+Подутина bump
+Обявя announce
+Най-големият biggest
+Легло bunk
+Труп corpse
+Борещ се struggling
+Възхищение admiration
+Врана crow
+Лунна светлина moonlight
+Бит beaten
+cat котка
+Възникнало arose
+Баня bath
+Абсолютен absolute
+Пакет bundle
+Последица consequence
+Активен active
+Придружи accompany
+Близо до near
+скорост gear
+Слънчева светлина sunlight
+Споря argue
+От време на време occasionally
+Атмосфера atmosphere
+Граждански civil
+Смайвам amaze
+Пушка banger
+Глупости crap
+Архив archive
+Корона crown
+Бекон bacon
+Способен capable
+Издавам betray
+Фон background
+Радостен cheerful
+Правилен correct
+Безпокойство anxiety
+голяма степен largely	До
+Като се има предвид considering
