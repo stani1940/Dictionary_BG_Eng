@@ -177,8 +177,12 @@ public class CreateDictionaryClass extends JFrame {
                 String text = textField.getText().trim();
                 String text2 = textArea.getText().trim();
                 char text1 = text.charAt(0);
+                if (isCyrillic(text1)){
+                    map.put(text2, text);
+                }else{
+                    map.put(text, text2);
+                }
 
-                map.put(text, text2);
                 //System.out.println(Arrays.asList(map));
                 saveTofile(text1);
             }
@@ -188,11 +192,9 @@ public class CreateDictionaryClass extends JFrame {
                 try {
                     PrintWriter printWriter = new PrintWriter(sFile);
                     for (Map.Entry<String, String> map : set) {
-                        if (!isCyrillic(text1)) {
-                            printWriter.println(map.getKey() + " " + map.getValue());
-                        }else{
-                            printWriter.println(map.getValue() + " " + map.getKey());
-                        }
+
+                        printWriter.println(map.getKey() + " " + map.getValue());
+
                     }
                     printWriter.flush();
                     printWriter.close();
