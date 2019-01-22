@@ -20,6 +20,7 @@ public class CreateDictionaryClass extends JFrame {
     JLabel labelBg;
     JLabel labelLeftarrow;
     JLabel labelRightarrow;
+    JLabel labelcopirighted;
     JFrame frame;
     JPanel panel;
     Icon icon1;
@@ -80,15 +81,20 @@ public class CreateDictionaryClass extends JFrame {
         icon4 = new ImageIcon("src/arrow_right.png");
         labelRightarrow = new JLabel(icon4);
         labelRightarrow.setBounds(240, 345, 150, 150);
+        labelcopirighted = new JLabel("developed by Stanislav Ginev - Java Student");
+        labelcopirighted.setBounds(50,500,580,50);
+        labelcopirighted.setFont(new Font("Courier", Font.BOLD, 24));
+
         panel.add(textField);
         panel.add(translateButton);
         panel.add(clearButton);
         panel.add(addButton);
         panel.add(textArea);
+        panel.add(labelcopirighted);
 
         frame.getContentPane().add(panel);
         frame.setSize(650, 600);
-        frame.setResizable(false);
+        frame.setResizable(true);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
