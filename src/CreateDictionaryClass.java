@@ -245,7 +245,6 @@ public class CreateDictionaryClass extends JFrame {
         return map;
     }
 
-
     public static void main(String[] args) {
 
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
