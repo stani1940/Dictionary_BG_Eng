@@ -2,14 +2,10 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.io.*;
-
 import java.io.BufferedReader;
-
 import java.io.File;
 import java.io.PrintWriter;
-
 import java.io.FileReader;
-
 import java.util.*;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -34,7 +30,7 @@ public class CreateDictionaryClass extends JFrame {
     public CreateDictionaryClass() {
         drawAndshowGui();
         translator();
-
+        clearArea();
     }
 
     public void drawAndshowGui() {
@@ -96,6 +92,17 @@ public class CreateDictionaryClass extends JFrame {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
+
+    public void clearArea() {
+        clearButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textArea.setText("");
+                textArea.setText(null);
+            }
+        });
+    }
+
 
     public void translator()  {
 
@@ -186,6 +193,7 @@ public class CreateDictionaryClass extends JFrame {
                 //System.out.println(Arrays.asList(map));
                 saveTofile(text1);
             }
+
             public void saveTofile(char text1){
                 File sFile = new File("src/test.txt");
 
@@ -206,6 +214,7 @@ public class CreateDictionaryClass extends JFrame {
 
         });
     }
+
     static HashMap<String, String> generateDict() throws Exception {
         File file = new File("src/test.txt");
 
