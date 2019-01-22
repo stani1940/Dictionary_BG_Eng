@@ -99,10 +99,15 @@ public class CreateDictionaryClass extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 textArea.setText("");
                 textArea.setText(null);
+                panel.remove(labelBg);
+                panel.remove(labelEng);
+                panel.remove(labelLeftarrow);
+                panel.remove(labelRightarrow);
+                panel.revalidate();
+                panel.repaint();
             }
         });
     }
-
 
     public void translator()  {
 
