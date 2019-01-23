@@ -77,10 +77,10 @@ public class CreateDictionaryClass extends JFrame {
         labelBg.setBounds(350, 310, 300, 200);
         icon3 = new ImageIcon("src/arrow_left.png");
         labelLeftarrow = new JLabel(icon3);
-        labelLeftarrow.setBounds(240, 345, 150, 150);
+        labelLeftarrow.setBounds(245, 345, 150, 150);
         icon4 = new ImageIcon("src/arrow_right.png");
         labelRightarrow = new JLabel(icon4);
-        labelRightarrow.setBounds(240, 345, 150, 150);
+        labelRightarrow.setBounds(245, 345, 150, 150);
         labelcopirighted = new JLabel("developed by Stanislav Ginev - Java Student");
         labelcopirighted.setBounds(50,500,580,50);
         labelcopirighted.setFont(new Font("Courier", Font.BOLD, 24));
@@ -94,7 +94,7 @@ public class CreateDictionaryClass extends JFrame {
 
         frame.getContentPane().add(panel);
         frame.setSize(650, 600);
-        frame.setResizable(true);
+        frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
@@ -128,7 +128,7 @@ public class CreateDictionaryClass extends JFrame {
                     HashMap<String, String> map = generateDict();
                     Set<Map.Entry<String, String>> set = map.entrySet();
 
-                    if ((text != null) && (!text.isEmpty())) {
+                    if (!text.isEmpty()) {
                         char text1 = text.charAt(0);
                         addLanguageoption(isCyrillic(text1));
                         panel.repaint();
