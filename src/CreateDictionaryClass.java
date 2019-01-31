@@ -14,6 +14,7 @@ public class CreateDictionaryClass extends JFrame {
     JTextField textField;
     JTextArea textArea;
     JButton translateButton;
+    JButton translateButtonphrase;
     JButton clearButton;
     JButton addButton;
     JLabel labelEng;
@@ -46,29 +47,34 @@ public class CreateDictionaryClass extends JFrame {
         panel.setLayout(null);
         panel.setBackground(Color.blue);
         textField = new JTextField(25);
-        textField.setBounds(20, 20, 600, 100);
+        textField.setBounds(20, 20, 602, 100);
 
         textField.setBorder(BorderFactory.createLineBorder(Color.black, 1, true));
         textField.setFont(new Font("Calibri", Font.BOLD, 36));
 
-        translateButton = new JButton("Преведи ");
+        translateButton = new JButton("<html>" + "Преведи" + "<br>" + " по дума" + "</html>");
         translateButton.setFont(new Font("Calibri", Font.BOLD, 24));
         translateButton.setBounds(20, 125, 150, 100);
         translateButton.setBackground(Color.gray);
 
+        translateButtonphrase = new JButton("<html>" + "Преведи" + "<br>" + " по фраза" + "</html>");
+        translateButtonphrase.setFont(new Font("Calibri", Font.BOLD, 24));
+        translateButtonphrase.setBounds(171, 125, 150, 100);
+        translateButtonphrase.setBackground(Color.gray);
+
         clearButton = new JButton("Изчисти ");
         clearButton.setFont(new Font("Calibri", Font.BOLD, 24));
-        clearButton.setBounds(250, 125, 150, 100);
+        clearButton.setBounds(322, 125, 148, 100);
         clearButton.setBackground(Color.gray);
 
         addButton = new JButton("Въведи ");
         addButton.setFont(new Font("Calibri", Font.BOLD, 24));
-        addButton.setBounds(470, 125, 150, 100);
+        addButton.setBounds(472, 125, 150, 100);
         addButton.setBackground(Color.GRAY);
 
         textArea = new JTextArea();
         textArea.setRows(2);
-        textArea.setBounds(20, 230, 600, 100);
+        textArea.setBounds(20, 230, 602, 100);
         textArea.setFont(new Font("Serif", Font.ITALIC, 36));
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
@@ -91,6 +97,7 @@ public class CreateDictionaryClass extends JFrame {
 
         panel.add(textField);
         panel.add(translateButton);
+        panel.add(translateButtonphrase);
         panel.add(clearButton);
         panel.add(addButton);
         panel.add(textArea);
