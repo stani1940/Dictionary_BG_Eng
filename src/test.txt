@@ -9,6 +9,7 @@ cheese Сирене
 consist Състои
 agony Агония
 eastward На изток
+kitten коте
 abruptly Рязко
 bend Завой
 bump Подутина
@@ -48,7 +49,7 @@ butt Мишена
 corpse Труп
 acting Актьорско майсторство
 largely	До голяма степен
-love bear обичам мечка
+love обичам
 compare Сравнение
 access Достъп
 cut режа
@@ -94,6 +95,7 @@ correct Правилен
 arrow Стрелка
 cotton Памук
 cow Крава
+bustard копеле
 constantly Постоянно
 biting Лют
 cough Кашлица
@@ -114,6 +116,7 @@ catching Ловене
 citizen Гражданин
 beard Брада
 bench Пейка
+tree дърво
 archive Архив
 cheerful Радостен
 breeze Бриз
@@ -133,6 +136,7 @@ arose Възникнало
 collect Събирам
 cloth Кърпа
 gear скорост
+little малко
 brightly Бляскаво
 awaken Събуждам
 capable Способен
