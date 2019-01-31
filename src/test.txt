@@ -48,7 +48,7 @@ butt Мишена
 corpse Труп
 acting Актьорско майсторство
 largely	До голяма степен
-love обичам
+love bear обичам мечка
 compare Сравнение
 access Достъп
 cut режа
@@ -101,6 +101,7 @@ associate Сътрудник
 bruise Натъртване
 lest	Да не би да
 red червен
+mother майка
 biggest Най-големият
 bark Кора
 clue Улика

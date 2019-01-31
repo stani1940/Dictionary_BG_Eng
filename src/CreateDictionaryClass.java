@@ -28,6 +28,10 @@ public class CreateDictionaryClass extends JFrame {
     Icon icon3;
     Icon icon4;
 
+    public static void main(String[] args) {
+        new CreateDictionaryClass();
+    }
+
     public CreateDictionaryClass() {
         drawAndshowGui();
         translator();
@@ -142,12 +146,12 @@ public class CreateDictionaryClass extends JFrame {
                             addWords(map);
                         }
 
-                        for (String s : text.split(" ")) {
+                        for (String word : text.split(" ")) {
                             for (Map.Entry<String, String> me : set) {
 
-                                if (s.equalsIgnoreCase(me.getKey())) {
+                                if (word.equalsIgnoreCase(me.getKey())) {
                                     text = me.getValue() + " ";
-                                } else if (s.equalsIgnoreCase(me.getValue())) {
+                                } else if (word.equalsIgnoreCase(me.getValue())) {
                                     text = me.getKey() + " ";
                                 }
                             }
@@ -243,15 +247,6 @@ public class CreateDictionaryClass extends JFrame {
             //reader.close();
         }
         return map;
-    }
-
-    public static void main(String[] args) {
-
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                new CreateDictionaryClass();
-            }
-        });
     }
 }
 
