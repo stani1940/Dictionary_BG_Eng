@@ -18,7 +18,7 @@ public class CreateDictionaryClass extends JFrame {
     private JButton clearButton;
     private JButton addButton;
     private JLabel labelEng;
-    private  JLabel labelBg;
+    private JLabel labelBg;
     private JLabel labelLeftarrow;
     private JLabel labelRightarrow;
     private JLabel labelcopirighted;
@@ -93,7 +93,7 @@ public class CreateDictionaryClass extends JFrame {
         labelRightarrow = new JLabel(icon4);
         labelRightarrow.setBounds(245, 345, 150, 150);
         labelcopirighted = new JLabel("developed by Stanislav Ginev - Java Student");
-        labelcopirighted.setBounds(50,500,580,50);
+        labelcopirighted.setBounds(50, 500, 580, 50);
         labelcopirighted.setFont(new Font("Courier", Font.BOLD, 24));
 
         panel.add(textField);
@@ -112,7 +112,7 @@ public class CreateDictionaryClass extends JFrame {
     }
 
 
-    private void translator()  {
+    private void translator() {
 
         translateButton.addActionListener(new ActionListener() {
             @Override
@@ -163,6 +163,7 @@ public class CreateDictionaryClass extends JFrame {
             }
         });
     }
+
     private void translatorPhrase() {
         translateButtonphrase.addActionListener(new ActionListener() {
             @Override
@@ -173,10 +174,10 @@ public class CreateDictionaryClass extends JFrame {
                 try {
                     addLanguageoption(isCyrillic(text1));
                     panel.repaint();
-                    if (isCyrillic(text1)){
-                        text= translateBgToEng(text);
-                    }else{
-                        text= translateEnglishTobg(text);
+                    if (isCyrillic(text1)) {
+                        text = translateBgToEng(text);
+                    } else {
+                        text = translateEnglishTobg(text);
                     }
 
                 } catch (Exception e1) {
@@ -208,8 +209,8 @@ public class CreateDictionaryClass extends JFrame {
 
     private String translateEnglishTobg(String text) throws Exception {
         String[] str = text.split(" ");
-        String word1="";
-        String word2="";
+        String word1 = "";
+        String word2 = "";
         for (int i = 0; i < str.length; i++) {
             int j = 0;
             if (i == 0) {
@@ -220,22 +221,22 @@ public class CreateDictionaryClass extends JFrame {
 
             for (Map.Entry<String, String> entry : set) {
                 if (entry.getKey().equalsIgnoreCase(str[i])) {
-                    word1+= entry.getValue() + " ";
+                    word1 += entry.getValue() + " ";
                     break;
                 } else if (j == map.size() - 1) {
-                    word2= (str[i] + " ");
+                    word2 = (str[i] + " ");
                 }
                 j++;
             }
         }
-        text =word1+word2;
+        text = word1 + word2;
         return text;
     }
 
     private String translateBgToEng(String text) throws Exception {
         String[] str = text.split(" ");
-        String word1="";
-        String word2="";
+        String word1 = "";
+        String word2 = "";
         for (int i = 0; i < str.length; i++) {
             int j = 0;
             if (i == 0) {
@@ -246,15 +247,15 @@ public class CreateDictionaryClass extends JFrame {
 
             for (Map.Entry<String, String> entry : set) {
                 if (entry.getValue().equalsIgnoreCase(str[i])) {
-                    word1+= entry.getKey() + " ";
+                    word1 += entry.getKey() + " ";
                     break;
                 } else if (j == map.size() - 1) {
-                    word2= (str[i] + " ");
+                    word2 = (str[i] + " ");
                 }
                 j++;
             }
         }
-        text =word1+word2;
+        text = word1 + word2;
         return text;
     }
 
@@ -272,7 +273,7 @@ public class CreateDictionaryClass extends JFrame {
         frame.setVisible(true);
     }
 
-    private  boolean isCyrillic(char text1) {
+    private boolean isCyrillic(char text1) {
 
         return Character.UnicodeBlock.CYRILLIC.equals(Character.UnicodeBlock.of(text1));
     }
@@ -287,16 +288,16 @@ public class CreateDictionaryClass extends JFrame {
                 String text = textField.getText().trim();
                 String text2 = textArea.getText().trim();
                 char text1 = text.charAt(0);
-                if (isCyrillic(text1)){
+                if (isCyrillic(text1)) {
                     map.put(text2, text);
-                }else{
+                } else {
                     map.put(text, text2);
                 }
                 //System.out.println(Arrays.asList(map));
                 saveTofile(text1);
             }
 
-            void saveTofile(char text1){
+            void saveTofile(char text1) {
                 File sFile = new File("src/test.txt");
 
                 try {
@@ -323,16 +324,22 @@ public class CreateDictionaryClass extends JFrame {
         HashMap<String, String> map = new HashMap<>();
 
         String line;
-        BufferedReader reader = new BufferedReader(new FileReader(file));
-        while ((line = reader.readLine()) != null) {
-            String[] parts = line.split(" ", 2);
-            if (parts.length >= 2) {
-                String key = parts[0];
-                String value = parts[1];
-                map.put(key, value);
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(" ", 2);
+                if (parts.length >= 2) {
+                    String key = parts[0];
+                    String value = parts[1];
+                    map.put(key, value);
+                }
             }
-            //reader.close();
+            reader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
+
         return map;
     }
 }

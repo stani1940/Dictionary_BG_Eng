@@ -99,6 +99,7 @@ bustard копеле
 constantly Постоянно
 biting Лют
 cough Кашлица
+kop ченге
 associate Сътрудник
 bruise Натъртване
 lest	Да не би да
