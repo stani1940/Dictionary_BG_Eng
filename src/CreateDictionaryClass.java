@@ -14,33 +14,33 @@ public class CreateDictionaryClass extends JFrame {
     private JTextField textField;
     private JTextArea textArea;
     private JButton translateButton;
-    private JButton translateButtonphrase;
+    private JButton translateButtonPhrase;
     private JButton clearButton;
     private JButton addButton;
     private JLabel labelEng;
     private JLabel labelBg;
-    private JLabel labelLeftarrow;
-    private JLabel labelRightarrow;
-    private JLabel labelcopirighted;
+    private JLabel labelLeftArrow;
+    private JLabel labelRightArrow;
+    private JLabel labelCodiRight;
     private JFrame frame;
     private JPanel panel;
-    private Icon icon1;
-    private Icon icon2;
-    private Icon icon3;
-    private Icon icon4;
+    private Icon iconEngFlag;
+    private Icon iconBgFlag;
+    private Icon iconLeftArrow;
+    private Icon iconRightArrow;
 
     public static void main(String[] args) {
         new CreateDictionaryClass();
     }
 
     private CreateDictionaryClass() {
-        drawAndshowGui();
+        drawAndShowGui();
         translator();
         translatorPhrase();
         clearArea();
     }
 
-    private void drawAndshowGui() {
+    private void drawAndShowGui() {
         frame = new JFrame("Eng-BG Dictionary Преводач");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -58,10 +58,10 @@ public class CreateDictionaryClass extends JFrame {
         translateButton.setBounds(20, 125, 150, 100);
         translateButton.setBackground(Color.gray);
 
-        translateButtonphrase = new JButton("<html>" + "Преведи" + "<br>" + " по фраза" + "</html>");
-        translateButtonphrase.setFont(new Font("Calibri", Font.BOLD, 24));
-        translateButtonphrase.setBounds(171, 125, 150, 100);
-        translateButtonphrase.setBackground(Color.gray);
+        translateButtonPhrase = new JButton("<html>" + "Преведи" + "<br>" + " по фраза" + "</html>");
+        translateButtonPhrase.setFont(new Font("Calibri", Font.BOLD, 24));
+        translateButtonPhrase.setBounds(171, 125, 150, 100);
+        translateButtonPhrase.setBackground(Color.gray);
 
         clearButton = new JButton("Изчисти ");
         clearButton.setFont(new Font("Calibri", Font.BOLD, 24));
@@ -80,29 +80,29 @@ public class CreateDictionaryClass extends JFrame {
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
 
-        icon1 = new ImageIcon("src/eng_flag.png");
-        labelEng = new JLabel(icon1);
+        iconEngFlag = new ImageIcon("src/eng_flag.png");
+        labelEng = new JLabel(iconEngFlag);
         labelEng.setBounds(0, 340, 300, 150);
-        icon2 = new ImageIcon("src/flag_bg.png");
-        labelBg = new JLabel(icon2);
+        iconBgFlag = new ImageIcon("src/flag_bg.png");
+        labelBg = new JLabel(iconBgFlag);
         labelBg.setBounds(350, 310, 300, 200);
-        icon3 = new ImageIcon("src/arrow_left.png");
-        labelLeftarrow = new JLabel(icon3);
-        labelLeftarrow.setBounds(245, 345, 150, 150);
-        icon4 = new ImageIcon("src/arrow_right.png");
-        labelRightarrow = new JLabel(icon4);
-        labelRightarrow.setBounds(245, 345, 150, 150);
-        labelcopirighted = new JLabel("developed by Stanislav Ginev - Java Student");
-        labelcopirighted.setBounds(50, 500, 580, 50);
-        labelcopirighted.setFont(new Font("Courier", Font.BOLD, 24));
+        iconLeftArrow = new ImageIcon("src/arrow_left.png");
+        labelLeftArrow = new JLabel(iconLeftArrow);
+        labelLeftArrow.setBounds(245, 345, 150, 150);
+        iconRightArrow = new ImageIcon("src/arrow_right.png");
+        labelRightArrow = new JLabel(iconRightArrow);
+        labelRightArrow.setBounds(245, 345, 150, 150);
+        labelCodiRight = new JLabel("developed by Stanislav Ginev - Java Student");
+        labelCodiRight.setBounds(50, 500, 580, 50);
+        labelCodiRight.setFont(new Font("Courier", Font.BOLD, 24));
 
         panel.add(textField);
         panel.add(translateButton);
-        panel.add(translateButtonphrase);
+        panel.add(translateButtonPhrase);
         panel.add(clearButton);
         panel.add(addButton);
         panel.add(textArea);
-        panel.add(labelcopirighted);
+        panel.add(labelCodiRight);
 
         frame.getContentPane().add(panel);
         frame.setSize(650, 600);
@@ -126,15 +126,15 @@ public class CreateDictionaryClass extends JFrame {
                     Set<Map.Entry<String, String>> set = map.entrySet();
 
                     if (!text.isEmpty()) {
-                        char text1 = text.charAt(0);
-                        addLanguageoption(isCyrillic(text1));
+                        char firstSymbol = text.charAt(0);
+                        addLanguageOption(isCyrillic(firstSymbol));
                         panel.repaint();
 
-                        if (!isCyrillic(text1) && !map.containsKey(text)) {
+                        if (!isCyrillic(firstSymbol) && !map.containsKey(text)) {
                             JOptionPane.showMessageDialog(frame, "" + "The word is missing Please click button add");
                             addWords(map);
                         }
-                        if (isCyrillic(text1) && !map.containsValue(text)) {
+                        if (isCyrillic(firstSymbol) && !map.containsValue(text)) {
                             JOptionPane.showMessageDialog(frame, "" + "Думата липсва в речника Моля натиснете бутона Въведи");
                             addWords(map);
                         }
@@ -165,19 +165,19 @@ public class CreateDictionaryClass extends JFrame {
     }
 
     private void translatorPhrase() {
-        translateButtonphrase.addActionListener(new ActionListener() {
+        translateButtonPhrase.addActionListener(new ActionListener() {
             @Override
 
             public void actionPerformed(ActionEvent e) {
                 String text = textField.getText().trim();
-                char text1 = text.charAt(0);
+                char firstSymbol = text.charAt(0);
                 try {
-                    addLanguageoption(isCyrillic(text1));
+                    addLanguageOption(isCyrillic(firstSymbol));
                     panel.repaint();
-                    if (isCyrillic(text1)) {
+                    if (isCyrillic(firstSymbol)) {
                         text = translateBgToEng(text);
                     } else {
-                        text = translateEnglishTobg(text);
+                        text = translateEnglishToBg(text);
                     }
 
                 } catch (Exception e1) {
@@ -199,15 +199,15 @@ public class CreateDictionaryClass extends JFrame {
                 textArea.setText(null);
                 panel.remove(labelBg);
                 panel.remove(labelEng);
-                panel.remove(labelLeftarrow);
-                panel.remove(labelRightarrow);
+                panel.remove(labelLeftArrow);
+                panel.remove(labelRightArrow);
                 panel.revalidate();
                 panel.repaint();
             }
         });
     }
 
-    private String translateEnglishTobg(String text) throws Exception {
+    private String translateEnglishToBg(String text) throws Exception {
         String[] str = text.split(" ");
         String word1 = "";
         String word2 = "";
@@ -259,23 +259,23 @@ public class CreateDictionaryClass extends JFrame {
         return text;
     }
 
-    private void addLanguageoption(boolean languageOption) {
+    private void addLanguageOption(boolean languageOption) {
         if (languageOption) {
             panel.add(labelBg);
-            panel.add(labelLeftarrow);
+            panel.add(labelLeftArrow);
             panel.add(labelEng);
         } else {
             panel.add(labelEng);
-            panel.add(labelRightarrow);
+            panel.add(labelRightArrow);
             panel.add(labelBg);
         }
 
         frame.setVisible(true);
     }
 
-    private boolean isCyrillic(char text1) {
+    private boolean isCyrillic(char firstSymbol) {
 
-        return Character.UnicodeBlock.CYRILLIC.equals(Character.UnicodeBlock.of(text1));
+        return Character.UnicodeBlock.CYRILLIC.equals(Character.UnicodeBlock.of(firstSymbol));
     }
 
 
@@ -286,18 +286,17 @@ public class CreateDictionaryClass extends JFrame {
 
             public void actionPerformed(ActionEvent e) {
                 String text = textField.getText().trim();
-                String text2 = textArea.getText().trim();
-                char text1 = text.charAt(0);
-                if (isCyrillic(text1)) {
-                    map.put(text2, text);
+                String textFromArea = textArea.getText().trim();
+                char firstSymbol = text.charAt(0);
+                if (isCyrillic(firstSymbol)) {
+                    map.put(textFromArea, text);
                 } else {
-                    map.put(text, text2);
+                    map.put(text, textFromArea);
                 }
-                //System.out.println(Arrays.asList(map));
-                saveTofile(text1);
+                saveToFile();
             }
 
-            void saveTofile(char text1) {
+            void saveToFile() {
                 File sFile = new File("src/test.txt");
 
                 try {
@@ -320,9 +319,7 @@ public class CreateDictionaryClass extends JFrame {
 
     private static HashMap<String, String> generateDict() throws Exception {
         File file = new File("src/test.txt");
-
         HashMap<String, String> map = new HashMap<>();
-
         String line;
 
         try {

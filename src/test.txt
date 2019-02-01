@@ -151,6 +151,7 @@ album Албум
 assistant Асистент
 frown Намръщвам се
 standpipe Вертикална тръба
+rich богат
 argue Споря
 awe Страхопочитание
 cheer Ура
