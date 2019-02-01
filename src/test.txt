@@ -48,7 +48,7 @@ acquainted Запознат
 butt Мишена
 corpse Труп
 acting Актьорско майсторство
-largely	До голяма степен
+largely До голяма степен
 love обичам
 compare Сравнение
 access Достъп
@@ -87,7 +87,7 @@ curiously любопитство
 behaviour Поведение
 arch Арка
 bunk Легло
-peer	Взирам се
+peer Взирам се
 argument Довод
 constant Постоянен
 broadway Бродуей
@@ -102,7 +102,7 @@ cough Кашлица
 kop ченге
 associate Сътрудник
 bruise Натъртване
-lest	Да не би да
+lest Да не би да
 red червен
 mother майка
 biggest Най-големият
@@ -162,3 +162,5 @@ bony Костелив
 betray Издавам
 cancer Рак
 astonish Учудвам
+I аз
+teddy мечо

@@ -208,54 +208,46 @@ public class CreateDictionaryClass extends JFrame {
     }
 
     private String translateEnglishToBg(String text) throws Exception {
-        String[] str = text.split(" ");
-        String word1 = "";
-        String word2 = "";
-        for (int i = 0; i < str.length; i++) {
-            int j = 0;
-            if (i == 0) {
-                System.out.println();
-            }
+
+        String str = "";
+        StringBuilder sb = new StringBuilder();
+        for (String word : text.split(" ")) {
+
             HashMap<String, String> map = generateDict();
             Set<Map.Entry<String, String>> set = map.entrySet();
 
             for (Map.Entry<String, String> entry : set) {
-                if (entry.getKey().equalsIgnoreCase(str[i])) {
-                    word1 += entry.getValue() + " ";
+                if (word.equalsIgnoreCase(entry.getKey())) {
+                    sb.append(entry.getValue());
+                    sb.append(" ");
+                    str = sb.toString();
                     break;
-                } else if (j == map.size() - 1) {
-                    word2 = (str[i] + " ");
                 }
-                j++;
             }
         }
-        text = word1 + word2;
+        text = str;
         return text;
     }
 
     private String translateBgToEng(String text) throws Exception {
-        String[] str = text.split(" ");
-        String wordFirst = "";
-        String wordSecond = "";
-        for (int i = 0; i < str.length; i++) {
-            int j = 0;
-            if (i == 0) {
-                System.out.println();
-            }
+
+        String str = "";
+        StringBuilder sb = new StringBuilder();
+        for (String word : text.split(" ")) {
+
             HashMap<String, String> map = generateDict();
             Set<Map.Entry<String, String>> set = map.entrySet();
 
             for (Map.Entry<String, String> entry : set) {
-                if (entry.getValue().equalsIgnoreCase(str[i])) {
-                    wordFirst += entry.getKey() + " ";
+                if (word.equalsIgnoreCase(entry.getValue())) {
+                    sb.append(entry.getKey());
+                    sb.append(" ");
+                    str = sb.toString();
                     break;
-                } else if (j == map.size() - 1) {
-                    wordSecond = (str[i] + " ");
                 }
-                j++;
             }
         }
-        text = wordFirst + wordSecond;
+        text = str;
         return text;
     }
 
