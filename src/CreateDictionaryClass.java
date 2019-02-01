@@ -111,7 +111,6 @@ public class CreateDictionaryClass extends JFrame {
         frame.setVisible(true);
     }
 
-
     private void translator() {
 
         translateButton.addActionListener(new ActionListener() {
@@ -131,10 +130,12 @@ public class CreateDictionaryClass extends JFrame {
                         panel.repaint();
 
                         if (!isCyrillic(firstSymbol) && !map.containsKey(text)) {
+                            checkNumberWords(text);
                             JOptionPane.showMessageDialog(frame, "" + "The word is missing Please click button add");
                             addWords(map);
                         }
                         if (isCyrillic(firstSymbol) && !map.containsValue(text)) {
+                            checkNumberWords(text);
                             JOptionPane.showMessageDialog(frame, "" + "Думата липсва в речника Моля натиснете бутона Въведи");
                             addWords(map);
                         }
@@ -143,9 +144,9 @@ public class CreateDictionaryClass extends JFrame {
                             for (Map.Entry<String, String> me : set) {
 
                                 if (word.equalsIgnoreCase(me.getKey())) {
-                                    text = me.getValue() + " ";
+                                    text = me.getValue();
                                 } else if (word.equalsIgnoreCase(me.getValue())) {
-                                    text = me.getKey() + " ";
+                                    text = me.getKey();
                                 }
                             }
                         }
@@ -162,6 +163,13 @@ public class CreateDictionaryClass extends JFrame {
                 textArea.setCaretPosition(textArea.getDocument().getLength());
             }
         });
+    }
+    private void checkNumberWords(String text){
+        String arr[] = text.split(" ");
+        if (arr.length > 1) {
+            JOptionPane.showMessageDialog(frame, "Грешка" + "Думата трябва да е само една");
+        }
+
     }
 
     private void translatorPhrase() {
