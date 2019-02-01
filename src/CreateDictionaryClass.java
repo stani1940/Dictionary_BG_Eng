@@ -235,8 +235,8 @@ public class CreateDictionaryClass extends JFrame {
 
     private String translateBgToEng(String text) throws Exception {
         String[] str = text.split(" ");
-        String word1 = "";
-        String word2 = "";
+        String wordFirst = "";
+        String wordSecond = "";
         for (int i = 0; i < str.length; i++) {
             int j = 0;
             if (i == 0) {
@@ -247,15 +247,15 @@ public class CreateDictionaryClass extends JFrame {
 
             for (Map.Entry<String, String> entry : set) {
                 if (entry.getValue().equalsIgnoreCase(str[i])) {
-                    word1 += entry.getKey() + " ";
+                    wordFirst += entry.getKey() + " ";
                     break;
                 } else if (j == map.size() - 1) {
-                    word2 = (str[i] + " ");
+                    wordSecond = (str[i] + " ");
                 }
                 j++;
             }
         }
-        text = word1 + word2;
+        text = wordFirst + wordSecond;
         return text;
     }
 
