@@ -35,9 +35,9 @@ public class CreateDictionaryClass extends JFrame {
 
     private CreateDictionaryClass() {
         drawAndShowGui();
-        translator();
-        translatorPhrase();
-        clearArea();
+        setUpTranslateButton();
+        setUpTranslatePhraseButton();;
+        setUpClearButton();
     }
 
     private void drawAndShowGui() {
@@ -111,58 +111,61 @@ public class CreateDictionaryClass extends JFrame {
         frame.setVisible(true);
     }
 
-    private void translator() {
+    private void setUpTranslateButton() {
 
         translateButton.addActionListener(new ActionListener() {
             @Override
 
             public void actionPerformed(ActionEvent e) {
-                String text = textField.getText().trim();
-
-                try {
-
-                    HashMap<String, String> map = generateDict();
-                    Set<Map.Entry<String, String>> set = map.entrySet();
-
-                    if (!text.isEmpty()) {
-                        char firstSymbol = text.charAt(0);
-                        addLanguageOption(isCyrillic(firstSymbol));
-                        panel.repaint();
-
-                        if (!isCyrillic(firstSymbol) && !map.containsKey(text)) {
-                            checkNumberWords(text);
-                            JOptionPane.showMessageDialog(frame, "" + "The word is missing Please click button add");
-                            addWords(map);
-                        }
-                        if (isCyrillic(firstSymbol) && !map.containsValue(text)) {
-                            checkNumberWords(text);
-                            JOptionPane.showMessageDialog(frame, "" + "Думата липсва в речника Моля натиснете бутона Въведи");
-                            addWords(map);
-                        }
-
-                        for (String word : text.split(" ")) {
-                            for (Map.Entry<String, String> me : set) {
-
-                                if (word.equalsIgnoreCase(me.getKey())) {
-                                    text = me.getValue();
-                                } else if (word.equalsIgnoreCase(me.getValue())) {
-                                    text = me.getKey();
-                                }
-                            }
-                        }
-                    } else {
-                        JOptionPane.showMessageDialog(frame, "" + "Моля въведете дума");
-                    }
-
-                } catch (Exception e1) {
-                    e1.printStackTrace();
-                }
-
-                textArea.append(text);
-                textField.selectAll();
-                textArea.setCaretPosition(textArea.getDocument().getLength());
+               translateWord();
             }
         });
+    }
+    private void translateWord(){
+        String text = textField.getText().trim();
+
+        try {
+
+            HashMap<String, String> map = generateDict();
+            Set<Map.Entry<String, String>> set = map.entrySet();
+
+            if (!text.isEmpty()) {
+                char firstSymbol = text.charAt(0);
+                addLanguageOption(isCyrillic(firstSymbol));
+                panel.repaint();
+
+                if (!isCyrillic(firstSymbol) && !map.containsKey(text)) {
+                    checkNumberWords(text);
+                    JOptionPane.showMessageDialog(frame, "" + "The word is missing Please click button add");
+                    addWords(map);
+                }
+                if (isCyrillic(firstSymbol) && !map.containsValue(text)) {
+                    checkNumberWords(text);
+                    JOptionPane.showMessageDialog(frame, "" + "Думата липсва в речника Моля натиснете бутона Въведи");
+                    addWords(map);
+                }
+
+                for (String word : text.split(" ")) {
+                    for (Map.Entry<String, String> me : set) {
+
+                        if (word.equalsIgnoreCase(me.getKey())) {
+                            text = me.getValue();
+                        } else if (word.equalsIgnoreCase(me.getValue())) {
+                            text = me.getKey();
+                        }
+                    }
+                }
+            } else {
+                JOptionPane.showMessageDialog(frame, "" + "Моля въведете дума");
+            }
+
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
+
+        textArea.append(text);
+        textField.selectAll();
+        textArea.setCaretPosition(textArea.getDocument().getLength());
     }
     private void checkNumberWords(String text){
         String arr[] = text.split(" ");
@@ -172,34 +175,37 @@ public class CreateDictionaryClass extends JFrame {
 
     }
 
-    private void translatorPhrase() {
+    private void setUpTranslatePhraseButton() {
         translateButtonPhrase.addActionListener(new ActionListener() {
             @Override
 
             public void actionPerformed(ActionEvent e) {
-                String text = textField.getText().trim();
-                char firstSymbol = text.charAt(0);
-                try {
-                    addLanguageOption(isCyrillic(firstSymbol));
-                    panel.repaint();
-                    if (isCyrillic(firstSymbol)) {
-                        text = translateBgToEng(text);
-                    } else {
-                        text = translateEnglishToBg(text);
-                    }
-
-                } catch (Exception e1) {
-                    e1.printStackTrace();
-                }
-
-                textArea.append(text);
-                textField.selectAll();
-                textArea.setCaretPosition(textArea.getDocument().getLength());
+                translatePhrase();
             }
         });
     }
+    private void translatePhrase(){
+        String text = textField.getText().trim();
+        char firstSymbol = text.charAt(0);
+        try {
+            addLanguageOption(isCyrillic(firstSymbol));
+            panel.repaint();
+            if (isCyrillic(firstSymbol)) {
+                text = translateBgToEng(text);
+            } else {
+                text = translateEnglishToBg(text);
+            }
 
-    private void clearArea() {
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
+
+        textArea.append(text);
+        textField.selectAll();
+        textArea.setCaretPosition(textArea.getDocument().getLength());
+    }
+
+    private void setUpClearButton() {
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
