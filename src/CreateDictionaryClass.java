@@ -36,7 +36,7 @@ public class CreateDictionaryClass extends JFrame {
     private CreateDictionaryClass() {
         drawAndShowGui();
         setUpTranslateButton();
-        setUpTranslatePhraseButton();;
+        setUpTranslatePhraseButton();
         setUpClearButton();
     }
 
@@ -167,6 +167,7 @@ public class CreateDictionaryClass extends JFrame {
         textField.selectAll();
         textArea.setCaretPosition(textArea.getDocument().getLength());
     }
+
     private void checkNumberWords(String text){
         String arr[] = text.split(" ");
         if (arr.length > 1) {
@@ -209,16 +210,20 @@ public class CreateDictionaryClass extends JFrame {
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                textArea.setText("");
-                textArea.setText(null);
-                panel.remove(labelBg);
-                panel.remove(labelEng);
-                panel.remove(labelLeftArrow);
-                panel.remove(labelRightArrow);
-                panel.revalidate();
-                panel.repaint();
+
+                clearArea();
             }
         });
+    }
+    private void clearArea(){
+        textArea.setText("");
+        textArea.setText(null);
+        panel.remove(labelBg);
+        panel.remove(labelEng);
+        panel.remove(labelLeftArrow);
+        panel.remove(labelRightArrow);
+        panel.revalidate();
+        panel.repaint();
     }
 
     private String translateEnglishToBg(String text) throws Exception {
