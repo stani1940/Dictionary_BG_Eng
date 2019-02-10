@@ -11,7 +11,8 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 public class CreateDictionaryClass extends JFrame {
-    private JTextField textField;
+
+    private static JTextField textField;
     private JTextArea textArea;
     private JButton translateButton;
     private JButton translateButtonPhrase;
@@ -29,8 +30,11 @@ public class CreateDictionaryClass extends JFrame {
     private Icon iconLeftArrow;
     private Icon iconRightArrow;
 
+        String TEXT;
+
+
     public static void main(String[] args) {
-        new CreateDictionaryClass();
+         new CreateDictionaryClass();
     }
 
     private CreateDictionaryClass() {
@@ -112,19 +116,15 @@ public class CreateDictionaryClass extends JFrame {
     }
 
     private void setUpTranslateButton() {
-
         translateButton.addActionListener(new ActionListener() {
             @Override
-
             public void actionPerformed(ActionEvent e) {
-               translateWord();
+                translateWord();
             }
         });
     }
     private void translateWord(){
         String text = textField.getText().trim();
-
-        try {
 
             HashMap<String, String> map = generateDict();
             Set<Map.Entry<String, String>> set = map.entrySet();
@@ -159,9 +159,6 @@ public class CreateDictionaryClass extends JFrame {
                 JOptionPane.showMessageDialog(frame, "" + "Моля въведете дума");
             }
 
-        } catch (Exception e1) {
-            e1.printStackTrace();
-        }
 
         textArea.append(text);
         textField.selectAll();
@@ -179,8 +176,8 @@ public class CreateDictionaryClass extends JFrame {
     private void setUpTranslatePhraseButton() {
         translateButtonPhrase.addActionListener(new ActionListener() {
             @Override
-
             public void actionPerformed(ActionEvent e) {
+
                 translatePhrase();
             }
         });
@@ -188,7 +185,7 @@ public class CreateDictionaryClass extends JFrame {
     private void translatePhrase(){
         String text = textField.getText().trim();
         char firstSymbol = text.charAt(0);
-        try {
+
             addLanguageOption(isCyrillic(firstSymbol));
             panel.repaint();
             if (isCyrillic(firstSymbol)) {
@@ -196,10 +193,6 @@ public class CreateDictionaryClass extends JFrame {
             } else {
                 text = translateEnglishToBg(text);
             }
-
-        } catch (Exception e1) {
-            e1.printStackTrace();
-        }
 
         textArea.append(text);
         textField.selectAll();
@@ -210,7 +203,6 @@ public class CreateDictionaryClass extends JFrame {
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 clearArea();
             }
         });
@@ -226,7 +218,7 @@ public class CreateDictionaryClass extends JFrame {
         panel.repaint();
     }
 
-    private String translateEnglishToBg(String text) throws Exception {
+    private String translateEnglishToBg(String text) {
 
         String str = "";
         StringBuilder sb = new StringBuilder();
@@ -248,7 +240,7 @@ public class CreateDictionaryClass extends JFrame {
         return text;
     }
 
-    private String translateBgToEng(String text) throws Exception {
+    private String translateBgToEng(String text) {
 
         String str = "";
         StringBuilder sb = new StringBuilder();
@@ -328,7 +320,7 @@ public class CreateDictionaryClass extends JFrame {
         });
     }
 
-    private static HashMap<String, String> generateDict() throws Exception {
+    private static HashMap<String, String> generateDict() {
         File file = new File("src/test.txt");
         HashMap<String, String> map = new HashMap<>();
         String line;
@@ -344,7 +336,7 @@ public class CreateDictionaryClass extends JFrame {
                 }
             }
             reader.close();
-        } catch (FileNotFoundException e) {
+        } catch (IOException e){
             e.printStackTrace();
         }
 

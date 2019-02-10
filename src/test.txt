@@ -42,6 +42,7 @@ crossing Пресичане
 announce Обявя
 venture Осмелявам се
 airport Летище
+horse кон
 blowing Продухване
 coast Крайбрежие
 daylight Дневна светлина
@@ -105,6 +106,7 @@ cough Кашлица
 kop ченге
 associate Сътрудник
 bruise Натъртване
+pig прасе
 red червен
 mother майка
 biggest Най-големият
